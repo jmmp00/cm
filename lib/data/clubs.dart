@@ -17,4 +17,8 @@ List clubs = [
       competition: 'Terceira Liga',
       imageName: "images/sjver.png",
       points: 50),
+  Clubs(
+      clubName: 'Porto',
+      imageName: "images/porto.png",
+      competition: 'Liga Bwin')
 ];
