@@ -10,7 +10,6 @@ class SecondScreen extends StatelessWidget {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        height: 200,
         child: ListView(
           shrinkWrap: true,
           children: clubs.map((e) {

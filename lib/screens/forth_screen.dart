@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tp2/data/players.dart';
-import '../nav_page.dart';
+
 
 class FourthScreen extends StatefulWidget {
   final String clubName;
@@ -19,9 +19,15 @@ class _FourthScreenState extends State<FourthScreen> {
         .where((e) => e.clubName == widget.clubName)
         .forEach((i) => clubPlayers.add(i));
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Container(
+        width: 150.0,
+        child: Image.asset('images/lp.png'),
+        ),
+      ),
       body: Container(
         width: double.infinity,
-        height: 200,
         child: ListView(
           children: clubPlayers.map((e) {
             final String playerName = e.playerName;

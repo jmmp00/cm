@@ -21,6 +21,5 @@ class Players extends Clubs {
       required this.competition,
       required this.passport,
       required this.data})
-      : super(
-            clubName: clubName, imageName: imageName, competition: competition);
+      : super(clubName: clubName, imageName: imageName, competition: competition);
 }
