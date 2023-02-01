@@ -1,7 +1,7 @@
 import 'package:tp2/classes/clubs.dart';
 
 class Players extends Clubs {
-  final String? playerName;
+  final String playerName;
   final int age;
   final double? weight;
   final double? height;

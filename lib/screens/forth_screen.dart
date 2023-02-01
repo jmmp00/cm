@@ -2,54 +2,42 @@ import 'package:flutter/material.dart';
 import 'package:tp2/data/players.dart';
 import '../nav_page.dart';
 
-class FourthScreen extends StatelessWidget {
+class FourthScreen extends StatefulWidget {
+  final String clubName;
+  const FourthScreen(this.clubName, {super.key});
+  @override
+  State<FourthScreen> createState() => _FourthScreenState();
+}
+
+class _FourthScreenState extends State<FourthScreen> {
+  List clubPlayers = [];
+  List competitionPlayers = [];
   int currentPage = 4;
   @override
   Widget build(BuildContext context) {
+    players
+        .where((e) => e.clubName == widget.clubName)
+        .forEach((i) => clubPlayers.add(i));
     return Scaffold(
       body: Container(
         width: double.infinity,
         height: 200,
         child: ListView(
-          shrinkWrap: true,
-          children: players.map((e) {
+          children: clubPlayers.map((e) {
             final String playerName = e.playerName;
             return Card(
-              child: Row(
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return FourthScreen();
-                              },
-                            ),
-                          );
-                        },
-                        child: Image.asset(
-                          e.imageName,
-                          width: 50,
-                          height: 50,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 25,
-                      ),
-                      Text(
-                        e.clubName,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(fontSize: 19),
-                      )
-                    ],
-                  )
-                ],
-              ),
-            );
+                child: Row(
+              children: [
+                Container(
+                  child: Text(
+                    '''Nome : ${e.playerName}
+                        Idade : ${e.age}
+                        Clube : ${e.clubName}
+                        Contratação : ${e.data}''',
+                  ),
+                ),
+              ],
+            ));
           }).toList(),
         ),
       ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tp2/data/clubs.dart';
 import 'package:tp2/screens/forth_screen.dart';
 import '../nav_page.dart';
-import 'third_screen.dart';
 
 class SecondScreen extends StatelessWidget {
   int currentPage = 2;
@@ -10,14 +9,14 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          width: double.infinity,
-          height: 200,
+        width: double.infinity,
+        height: 200,
         child: ListView(
           shrinkWrap: true,
           children: clubs.map((e) {
             final String clubName = e.clubName;
             final String imagename = e.imageName;
-            return Card(            
+            return Card(
               child: Row(
                 children: [
                   Row(
@@ -26,15 +25,15 @@ class SecondScreen extends StatelessWidget {
                       InkWell(
                         onTap: () {
                           Navigator.push(
-                            context, 
+                            context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return FourthScreen();
-                          },
+                                return FourthScreen(clubName);
+                              },
                             ),
                           );
                         },
-                       child: Image.asset(
+                        child: Image.asset(
                           e.imageName,
                           width: 50,
                           height: 50,
@@ -44,9 +43,9 @@ class SecondScreen extends StatelessWidget {
                         width: 25,
                       ),
                       Text(
-                        e.clubName, 
+                        e.clubName,
                         textAlign: TextAlign.center,
-                        style: const TextStyle( fontSize: 19),
+                        style: const TextStyle(fontSize: 19),
                       )
                     ],
                   )
