@@ -20,5 +20,6 @@ List clubs = [
   Clubs(
       clubName: 'Porto',
       imageName: "images/porto.png",
-      competition: 'Liga Bwin')
+      competition: 'Liga Bwin',
+      points: 44)
 ];

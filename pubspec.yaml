@@ -61,6 +61,7 @@ flutter:
     - images/benfica.png
     - images/feirense.png
     - images/sjver.png
+    - images/porto.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
