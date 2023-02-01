@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tp2/data/clubs.dart';
+import 'package:tp2/screens/forth_screen.dart';
 import '../nav_page.dart';
 import 'third_screen.dart';
 
@@ -7,39 +9,40 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Teams',
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-                borderRadius: BorderRadius.circular(5),
+      body: Container(
+          width: double.infinity,
+          height: 200,
+        child: ListView(
+          shrinkWrap: true,
+          children: clubs.map((e) {
+            final String clubName = e.clubName;
+            return Card(            
+              child: Row(
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context, 
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return FourthScreen();
+                          },
+                            ),
+                          );
+                        },
+                        child: Text(clubName),
+                      ),
+                    ],
+                  )
+                ],
               ),
-              child: ElevatedButton(
-                 onPressed: () {
-                  Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ThirdScreen()),
-                  );
-                },
-                child: Text(
-                  '2Go to Another 3 Page',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                 ),
-                ),
-              ),
-            ),
-          ],
+            );
+          }).toList(),
         ),
       ),
     );
-  } 
+  }
 }
