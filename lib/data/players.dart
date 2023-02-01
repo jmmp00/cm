@@ -7,5 +7,6 @@ List players = [
       weight: 60,
       passport: 2005,
       data: DateTime.now(),
-      competition: 'Liga Bwin')
+      competition: 'Liga Bwin',
+      clubName: 'Benfica')
 ];

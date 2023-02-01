@@ -1,5 +1,5 @@
 class Competitions {
-  final String? nameCompetition;
+  final int points;
 
-  Competitions({required this.nameCompetition});
+  Competitions({required this.points});
 }
