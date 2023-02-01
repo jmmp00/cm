@@ -8,7 +8,8 @@ List players = [
       passport: 2005,
       data: DateTime.now(),
       competition: 'Liga Bwin',
-      clubName: 'Benfica'),
+      clubName: 'Benfica',
+      imageName: "images/guedes.png"),
   Players(
       playerName: 'Frederick Aursnes',
       age: 25,
@@ -16,7 +17,8 @@ List players = [
       passport: 2005,
       data: DateTime.now(),
       competition: 'Liga Bwin',
-      clubName: 'Benfica'),
+      clubName: 'Benfica',
+      imageName: "images/guedes.png"),
   Players(
       playerName: 'Nicolas Otamendi',
       age: 35,
@@ -24,7 +26,8 @@ List players = [
       passport: 2005,
       data: DateTime.now(),
       competition: 'Liga Bwin',
-      clubName: 'Benfica'),
+      clubName: 'Benfica',
+      imageName: "images/guedes.png"),
   Players(
       playerName: 'Otávio',
       age: 25,
@@ -32,7 +35,8 @@ List players = [
       passport: 2005,
       data: DateTime.now(),
       competition: 'Liga Bwin',
-      clubName: 'Porto'),
+      clubName: 'Porto',
+      imageName: "images/otavio.png"),
   Players(
       playerName: 'Pepe',
       age: 38,
@@ -40,7 +44,8 @@ List players = [
       passport: 2005,
       data: DateTime.now(),
       competition: 'Liga Bwin',
-      clubName: 'Porto'),
+      clubName: 'Porto',
+      imageName: "images/otavio.png"),
   Players(
       playerName: 'Mehdi Taremi',
       age: 29,
@@ -48,5 +53,6 @@ List players = [
       passport: 2005,
       data: DateTime.now(),
       competition: 'Liga Bwin',
-      clubName: 'Porto'),
+      clubName: 'Porto',
+      imageName: "images/otavio.png"),
 ];
