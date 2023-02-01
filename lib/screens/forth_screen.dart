@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tp2/data/players.dart';
 
-
 class FourthScreen extends StatefulWidget {
   final String clubName;
   const FourthScreen(this.clubName, {super.key});
@@ -22,8 +21,8 @@ class _FourthScreenState extends State<FourthScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: Container(
-        width: 150.0,
-        child: Image.asset('images/lp.png'),
+          width: 150.0,
+          child: Image.asset('images/lp.png'),
         ),
       ),
       body: Container(
