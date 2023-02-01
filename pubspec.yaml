@@ -58,6 +58,9 @@ dev_dependencies:
 flutter:
   assets:
     - images/lp.png
+    - images/benfica.png
+    - images/feirense.png
+    - images/sjver.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -31,8 +31,6 @@ Widget build(BuildContext context) {
         child: Image.asset('images/lp.png'),
         ),
       ),
-
-      
    
       body: pages[currentPage],
       bottomNavigationBar: NavigationBar(destinations: const [  

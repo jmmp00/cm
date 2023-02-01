@@ -16,6 +16,7 @@ class SecondScreen extends StatelessWidget {
           shrinkWrap: true,
           children: clubs.map((e) {
             final String clubName = e.clubName;
+            final String imagename = e.imageName;
             return Card(            
               child: Row(
                 children: [
@@ -33,8 +34,20 @@ class SecondScreen extends StatelessWidget {
                             ),
                           );
                         },
-                        child: Text(clubName),
+                       child: Image.asset(
+                          e.imageName,
+                          width: 50,
+                          height: 50,
+                        ),
                       ),
+                      SizedBox(
+                        width: 25,
+                      ),
+                      Text(
+                        e.clubName, 
+                        textAlign: TextAlign.center,
+                        style: const TextStyle( fontSize: 19),
+                      )
                     ],
                   )
                 ],

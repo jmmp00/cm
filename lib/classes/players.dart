@@ -12,6 +12,7 @@ class Players extends Clubs {
 
   Players(
       {clubName,
+      imageName,
       required this.playerName,
       required this.age,
       this.weight,
@@ -20,5 +21,5 @@ class Players extends Clubs {
       required this.competition,
       required this.passport,
       required this.data})
-      : super(clubName: clubName);
+      : super(clubName: clubName, imageName: imageName);
 }
