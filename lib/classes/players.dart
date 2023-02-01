@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:tp2/classes/clubs.dart';
 
 class Players extends Clubs {
@@ -23,4 +24,5 @@ class Players extends Clubs {
       required this.data})
       : super(
             clubName: clubName, imageName: imageName, competition: competition);
+  AssetImage get image => AssetImage('assets/$imageName.png');
 }

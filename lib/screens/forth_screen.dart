@@ -21,7 +21,6 @@ class _FourthScreenState extends State<FourthScreen> {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        height: 200,
         child: ListView(
           children: clubPlayers.map((e) {
             final String playerName = e.playerName;
@@ -30,10 +29,13 @@ class _FourthScreenState extends State<FourthScreen> {
               children: [
                 Container(
                   child: Text(
-                    '''Nome : ${e.playerName}
-                        Idade : ${e.age}
-                        Clube : ${e.clubName}
-                        Contratação : ${e.data}''',
+                    ''' 
+                    Nome  : ${e.playerName}
+                    Idade : ${e.age}
+                    Peso : ${e.weight}
+                    Altura : ${e.height}
+                    Clube : ${e.clubName}
+                    Contratação : ${e.data}''',
                   ),
                 ),
               ],
