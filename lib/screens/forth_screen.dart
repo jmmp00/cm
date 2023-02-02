@@ -32,7 +32,11 @@ class _FourthScreenState extends State<FourthScreen> {
             final String playerName = e.playerName;
             return Card(
                 child: Row(
+                  mainAxisSize: MainAxisSize.min,
               children: [
+                Image.asset('images/player.png',
+                          height: 80,
+                        ),
                 Container(
                   child: Text(
                     ''' 

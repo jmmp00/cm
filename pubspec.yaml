@@ -62,8 +62,7 @@ flutter:
     - images/feirense.png
     - images/sjver.png
     - images/porto.png
-    - images/otavio.png
-    - images/guedes.png
+    - images/player.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
