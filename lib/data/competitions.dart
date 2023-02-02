@@ -4,5 +4,5 @@ List competitions = [
   Competitions(
     nameCompetition: 'Liga Portugal Bwin',
   ),
-  Competitions(nameCompetition: 'Liga SabSeg')
+  Competitions(nameCompetition: 'Liga Portugal SabSeg')
 ];

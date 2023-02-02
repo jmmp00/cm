@@ -30,19 +30,17 @@ class _FifthScreenState extends State<FifthScreen> {
         width: double.infinity,
         child: ListView(
           children: competitionClubs.map((e) {
-            final String playerName = e.playerName;
+            final String nameCompetition= e.nameCompetition;
             return Card(
                 child: Row(
               children: [
                 Container(
                   child: Text(
                     ''' 
-                    Nome  : ${e.playerName}
-                    Idade : ${e.age}
-                    Peso : ${e.weight}
-                    Altura : ${e.height}
-                    Clube : ${e.clubName}
-                    Contratação : ${e.data}''',
+                    Nome  : ${e.clubName}
+                    Pontos: ${e.points}
+
+                    ''',
                   ),
                 ),
               ],

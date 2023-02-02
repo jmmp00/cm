@@ -7,53 +7,62 @@ class FirstScreen extends StatelessWidget {
   int currentPage = 1;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+
+
+return Scaffold(
       body: Container(
         width: double.infinity,
         child: ListView(
           shrinkWrap: true,
           children: competitions.map((e) {
             final String nameCompetition = e.nameCompetition;
-            //final String imagename = e.imageName;
-            return Card(
-              child: Row(
-                children: [
-                  Row(
+            return SizedBox(
+              height: 100,
+              child: Card(
+                child: Container(
+                  width: double.infinity,
+                  child: Row(
+                    
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       InkWell(
+                        child: Container(
+                          width: 70,
+                          height: 70,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.blue,
+                          ),
+                        ),
                         onTap: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return (FifthScreen(nameCompetition));
+                                return FifthScreen(nameCompetition);
                               },
                             ),
                           );
                         },
-                        //   child: Image.asset(
-                        //    e.imageName,
-                        //   width: 50,
-                        //  height: 50,
                       ),
-
-                      //SizedBox(
-                      //  width: 25,
-                      // ),
+                      SizedBox(
+                        width: 25,
+                      ),
                       Text(
                         e.nameCompetition,
                         textAlign: TextAlign.center,
                         style: const TextStyle(fontSize: 19),
                       )
                     ],
-                  )
-                ],
+                  ),
+                ),
               ),
             );
           }).toList(),
         ),
       ),
     );
-  }
+
+
+  } 
 }
