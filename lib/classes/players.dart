@@ -11,21 +11,16 @@ class Players extends Clubs {
   final String? competition;
   final int passport;
   final DateTime data;
-  final String playerImage;
 
-  Players(
-      {clubName,
-      required this.playerImage,
-      required this.playerName,
-      required this.age,
-      this.weight,
-      this.height,
-      this.schoolDegree,
-      required this.competition,
-      required this.passport,
-      required this.data,
-      imageName,})
-      : super(clubName: clubName, competition: competition, imageName: imageName);
-
-      AssetImage get pimage => AssetImage('assets/$playerImage.png');
+  Players({
+    clubName,
+    required this.playerName,
+    required this.age,
+    this.weight,
+    this.height,
+    this.schoolDegree,
+    required this.competition,
+    required this.passport,
+    required this.data,
+  }) : super(clubName: clubName, competition: competition);
 }

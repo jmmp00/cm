@@ -30,7 +30,6 @@ class _FourthScreenState extends State<FourthScreen> {
         child: ListView(
           children: clubPlayers.map((e) {
             final String playerName = e.playerName;
-            final String playerImage = e.playerImage;
             return Card(
                 child: Row(
               children: [

@@ -13,11 +13,15 @@ class _FifthScreenState extends State<FifthScreen> {
   List competitionClubs = [];
   List competitionPlayers = [];
   int currentPage = 5;
+  String? _selectedSeason = '2022/2023';
+  List<String> _optionsSeason = ['2022/2023', '2021/2022'];
+
   @override
   Widget build(BuildContext context) {
-    competitionsClubs
+    List filteredCompetitionClubs = competitionsClubs
         .where((e) => e.nameCompetition == widget.nameCompetition)
-        .forEach((i) => competitionClubs.add(i));
+        .toList();
+    filteredCompetitionClubs.sort((a, b) => b.points.compareTo(a.points));
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -26,27 +30,53 @@ class _FifthScreenState extends State<FifthScreen> {
           child: Image.asset('images/lp.png'),
         ),
       ),
-      body: Container(
-        width: double.infinity,
-        child: ListView(
-          children: competitionClubs.map((e) {
-            final String nameCompetition= e.nameCompetition;
-            return Card(
-                child: Row(
-              children: [
-                Container(
-                  child: Text(
-                    ''' 
-                    Nome  : ${e.clubName}
-                    Pontos: ${e.points}
-
-                    ''',
-                  ),
-                ),
-              ],
-            ));
-          }).toList(),
-        ),
+      body: Column(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.all(16.0),
+            child: DropdownButton(
+              hint: Text('Select an option'),
+              value: _selectedSeason,
+              items: _optionsSeason.map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (value) {
+                setState(() {
+                  _selectedSeason = value;
+                });
+              },
+            ),
+          ),
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              child: ListView(
+                children: filteredCompetitionClubs
+                    .where((e) => e.season == _selectedSeason)
+                    .map((e) {
+                  final String nameCompetition = e.nameCompetition;
+                  return Card(
+                      child: Row(
+                    children: [
+                      Container(
+                        child: Text(
+                          ''' 
+                          Nome  : ${e.clubName}
+                          Pontos: ${e.points}
+      
+                          ''',
+                        ),
+                      ),
+                    ],
+                  ));
+                }).toList(),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
