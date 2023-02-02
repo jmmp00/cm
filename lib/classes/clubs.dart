@@ -3,12 +3,12 @@ import 'package:tp2/classes/competitions.dart';
 
 class Clubs {
   final String clubName;
-  final String? imageName;
+  final String imageName;
   final String? competition;
 
   Clubs({
     required this.clubName,
-    this.imageName,
+    required this.imageName,
     required this.competition,
   });
 

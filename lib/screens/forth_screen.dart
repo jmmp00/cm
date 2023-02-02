@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tp2/data/players.dart';
+import 'package:typicons_flutter/typicons_flutter.dart';
 
 class FourthScreen extends StatefulWidget {
   final String clubName;
@@ -19,6 +20,10 @@ class _FourthScreenState extends State<FourthScreen> {
         .forEach((i) => clubPlayers.add(i));
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Typicons.arrow_left_thick, color: Colors.white),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
         centerTitle: true,
         title: Container(
           width: 150.0,
@@ -34,15 +39,18 @@ class _FourthScreenState extends State<FourthScreen> {
                 child: Row(
               children: [
                 Container(
-                  child: Text(
-                    ''' 
-                    Nome  : ${e.playerName}
-                    Idade : ${e.age}
-                    Peso : ${e.weight}
-                    Altura : ${e.height}
-                    Clube : ${e.clubName}
-                    Contratação : ${e.data}''',
-                  ),
+                  width: 100.0,
+                  height: 100.0,
+                  child: Image.asset(e.playerImage),
+                ),
+                Container(
+                  child: Text('Nome  : ${e.playerName} \n'
+                      'Idade : ${e.age} \n'
+                      'Peso : ${e.weight} \n'
+                      'Altura : ${e.height}\n'
+                      'Contrato : ${e.contract}\n'
+                      'Contratação : ${e.data}\n'
+                      'Controlo Doping : ${e.dopingControl}\n'),
                 ),
               ],
             ));

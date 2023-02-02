@@ -7,32 +7,27 @@ class FirstScreen extends StatelessWidget {
   int currentPage = 1;
   @override
   Widget build(BuildContext context) {
-
-
-return Scaffold(
+    return Scaffold(
       body: Container(
         width: double.infinity,
         child: ListView(
           shrinkWrap: true,
           children: competitions.map((e) {
             final String nameCompetition = e.nameCompetition;
+            final String imageCompetition = e.imageCompetition;
             return SizedBox(
               height: 100,
               child: Card(
                 child: Container(
                   width: double.infinity,
                   child: Row(
-                    
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       InkWell(
                         child: Container(
                           width: 70,
                           height: 70,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.blue,
-                          ),
+                          child: Image.asset(imageCompetition),
                         ),
                         onTap: () {
                           Navigator.push(
@@ -62,7 +57,5 @@ return Scaffold(
         ),
       ),
     );
-
-
-  } 
+  }
 }

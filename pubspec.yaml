@@ -57,6 +57,8 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
+    - images/ligabwin.png
+    - images/ligasabseg.png
     - images/lp.png
     - images/benfica.png
     - images/feirense.png
@@ -64,6 +66,37 @@ flutter:
     - images/porto.png
     - images/otavio.png
     - images/guedes.png
+    - images/academicoviseu.png
+    - images/arouca.png
+    - images/boavista.png
+    - images/braga.png
+    - images/casapia.png
+    - images/chaves.png
+    - images/covilha.png
+    - images/estoril.png
+    - images/estrela.png
+    - images/famalicao.png
+    - images/farense.png
+    - images/feirense.png
+    - images/gilvicente.png
+    - images/leixoes.png
+    - images/mafra.png
+    - images/maritimo.png
+    - images/moreirense.png
+    - images/nacional.png
+    - images/oliveirense.png
+    - images/paços.png
+    - images/penafiel.png
+    - images/portimonense.png
+    - images/rioave.png
+    - images/santaclara.png
+    - images/Sporting.png
+    - images/tondela.png
+    - images/torreense.png
+    - images/trofense.png
+    - images/vilafranquense.png
+    - images/vitoria.png
+    - images/vizela.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tp2/data/competitionsClub.dart';
 import 'package:tp2/data/players.dart';
+import 'package:typicons_flutter/typicons_flutter.dart';
 
 class FifthScreen extends StatefulWidget {
   final String nameCompetition;
@@ -24,6 +25,10 @@ class _FifthScreenState extends State<FifthScreen> {
     filteredCompetitionClubs.sort((a, b) => b.points.compareTo(a.points));
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Typicons.arrow_left_thick, color: Colors.white),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
         centerTitle: true,
         title: Container(
           width: 150.0,
@@ -35,6 +40,7 @@ class _FifthScreenState extends State<FifthScreen> {
           Container(
             padding: EdgeInsets.all(16.0),
             child: DropdownButton(
+              icon: Icon(Typicons.arrow_sorted_down),
               hint: Text('Select an option'),
               value: _selectedSeason,
               items: _optionsSeason.map((String value) {
@@ -62,12 +68,17 @@ class _FifthScreenState extends State<FifthScreen> {
                       child: Row(
                     children: [
                       Container(
+                        width: 50.0,
+                        height: 50.0,
+                        child: Image.asset(e.clubLogo),
+                      ),
+                      Container(
                         child: Text(
                           ''' 
-                          Nome  : ${e.clubName}
-                          Pontos: ${e.points}
-      
-                          ''',
+                Nome  : ${e.clubName}
+                Pontos: ${e.points}
+
+                ''',
                         ),
                       ),
                     ],
