@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:typicons_flutter/typicons_flutter.dart';
 
-import 'screens/first_screen.dart';
-import 'screens/second_screen.dart';
-import 'screens/third_screen.dart';
+import 'screens/leagues.dart';
+import 'screens/teams.dart';
+import 'screens/history.dart';
 
 class NavPage extends StatefulWidget {
   const NavPage({super.key});
@@ -16,9 +16,9 @@ class _NavPageState extends State<NavPage> {
 
   int currentPage = 0;
   List<Widget> pages =  [
-    FirstScreen(),
-    SecondScreen(),
-    ThirdScreen(),
+    LeagueScreen(),
+    TeamsScreen(),
+    HistoryScreen(),
   ];
 
   @override

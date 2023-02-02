@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../nav_page.dart';
 
-class ThirdScreen extends StatelessWidget {
+class HistoryScreen extends StatelessWidget {
   int currentPage = 3;
   @override
   Widget build(BuildContext context) {

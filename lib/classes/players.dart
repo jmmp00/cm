@@ -11,9 +11,9 @@ class Players extends Clubs {
   final String? schoolDegree;
   final String? competition;
   final DateTime dopingControl;
-  final String contract;
+  final DateTime contractEnd;
   final int passport;
-  final DateTime data;
+  final DateTime contractBegin;
 
   Players({
     clubName,
@@ -26,8 +26,8 @@ class Players extends Clubs {
     this.schoolDegree,
     required this.competition,
     required this.passport,
-    required this.data,
-    required this.contract,
+    required this.contractBegin,
+    required this.contractEnd,
     required this.dopingControl,
   }) : super(
             clubName: clubName, competition: competition, imageName: imageName);

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tp2/classes/clubs.dart';
 import 'package:tp2/data/clubs.dart';
-import 'package:tp2/screens/forth_screen.dart';
+import 'package:tp2/screens/players.dart';
 import '../nav_page.dart';
 
-class SecondScreen extends StatelessWidget {
+class TeamsScreen extends StatelessWidget {
   int currentPage = 2;
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class SecondScreen extends StatelessWidget {
       leagueMap[competition]?.add(club);
     }
     final leagues = leagueMap.keys.toList();
-    return Scaffold(
+        return Scaffold(
       body: Container(
         width: double.infinity,
         child: ListView.builder(
@@ -39,40 +39,40 @@ class SecondScreen extends StatelessWidget {
                   ),
                 ),
                 ...leagueClubs!.map((club) {
-                  return Card(
-                    child: Row(
-                      children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return FourthScreen(club.clubName);
-                                    },
-                                  ),
-                                );
-                              },
-                              child: Image.asset(
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return PlayerScreen(club.clubName);
+                          },
+                        ),
+                      );
+                    },
+                    child: Card(
+                      child: Row(
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Image.asset(
                                 club.imageName,
                                 width: 50,
                                 height: 50,
                               ),
-                            ),
-                            SizedBox(
-                              width: 25,
-                            ),
-                            Text(
-                              club.clubName,
-                              textAlign: TextAlign.center,
-                              style: const TextStyle(fontSize: 19),
-                            )
-                          ],
-                        )
-                      ],
+                              SizedBox(
+                                width: 12,
+                              ),
+                              Text(
+                                club.clubName,
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(fontSize: 19),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
                     ),
                   );
                 }).toList(),

@@ -3,17 +3,18 @@ import 'package:tp2/data/competitionsClub.dart';
 import 'package:tp2/data/players.dart';
 import 'package:typicons_flutter/typicons_flutter.dart';
 
-class FifthScreen extends StatefulWidget {
+class ClubClassification extends StatefulWidget {
   final String nameCompetition;
-  const FifthScreen(this.nameCompetition, {super.key});
+  const ClubClassification(this.nameCompetition, {super.key});
   @override
-  State<FifthScreen> createState() => _FifthScreenState();
+  State<ClubClassification> createState() => _ClubClassification();
 }
 
-class _FifthScreenState extends State<FifthScreen> {
+class _ClubClassification extends State<ClubClassification> {
   List competitionClubs = [];
   List competitionPlayers = [];
   int currentPage = 5;
+  int counter = 0;
   String? _selectedSeason = '2022/2023';
   List<String> _optionsSeason = ['2022/2023', '2021/2022'];
 
@@ -45,6 +46,7 @@ class _FifthScreenState extends State<FifthScreen> {
               value: _selectedSeason,
               items: _optionsSeason.map((String value) {
                 return DropdownMenuItem<String>(
+                  
                   value: value,
                   child: Text(value),
                 );
@@ -52,6 +54,7 @@ class _FifthScreenState extends State<FifthScreen> {
               onChanged: (value) {
                 setState(() {
                   _selectedSeason = value;
+                  counter = 0;
                 });
               },
             ),
@@ -64,21 +67,30 @@ class _FifthScreenState extends State<FifthScreen> {
                     .where((e) => e.season == _selectedSeason)
                     .map((e) {
                   final String nameCompetition = e.nameCompetition;
+                  counter++;
                   return Card(
                       child: Row(
                     children: [
+                      Text(counter.toString()+'.', style: TextStyle(fontWeight: FontWeight.bold)),
+                      SizedBox(width: 10),
                       Container(
                         width: 50.0,
                         height: 50.0,
                         child: Image.asset(e.clubLogo),
                       ),
+                      SizedBox(width: 15),
                       Container(
-                        child: Text(
-                          ''' 
-                Nome  : ${e.clubName}
-                Pontos: ${e.points}
-
-                ''',
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [ 
+                            Text('${e.clubName}', style: TextStyle(fontWeight: FontWeight.bold)),
+                            Row(
+                            children: [
+                              Text('Points: ', style: TextStyle(fontWeight: FontWeight.bold)),
+                              Text('${e.points}')
+                            ],
+                          ),
+                          ],
                         ),
                       ),
                     ],
