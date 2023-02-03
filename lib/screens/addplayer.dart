@@ -1,17 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:tp2/data/players.dart';
+import 'package:typicons_flutter/typicons_flutter.dart';
+
+import '../classes/players.dart';
 
 class addPlayer extends StatefulWidget {
+  final String clubName;
+ 
+  const addPlayer(this.clubName, {super.key});
   @override
-  _addPlayerScreenState createState() => _addPlayerScreenState();
+  State<addPlayer> createState() => _addPlayer();
 }
 
-class _addPlayerScreenState extends State<addPlayer> {
+class _addPlayer extends State<addPlayer> {
   final _formKey = GlobalKey<FormState>();
   final _playerNameController = TextEditingController();
-  final _clubNameController = TextEditingController();
-  final _playerImageController = TextEditingController();
   final _ageController = TextEditingController();
   final _weightController = TextEditingController();
+  final _passportController = TextEditingController();
   final _heightController = TextEditingController();
   final _contractBeginController = TextEditingController();
   final _contractEndController = TextEditingController();
@@ -21,6 +27,10 @@ class _addPlayerScreenState extends State<addPlayer> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Typicons.arrow_left_thick, color: Colors.white),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
         title: Text('Add New Player'),
       ),
       body: Form(
@@ -35,26 +45,6 @@ class _addPlayerScreenState extends State<addPlayer> {
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Please enter player name';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                controller: _clubNameController,
-                decoration: InputDecoration(labelText: 'Club Name'),
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Please enter club name';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                controller: _playerImageController,
-                decoration: InputDecoration(labelText: 'Player Image'),
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Please enter player image';
                   }
                   return null;
                 },
@@ -93,9 +83,20 @@ class _addPlayerScreenState extends State<addPlayer> {
                 },
               ),
               TextFormField(
+                controller: _passportController,
+                decoration: InputDecoration(labelText: 'Passport'),
+                keyboardType: TextInputType.number,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'Please enter passport';
+                  }
+                  return null;
+                },
+              ),
+              TextFormField(
                 controller: _contractBeginController,
                 decoration: InputDecoration(labelText: 'Contract Begin'),
-                keyboardType: TextInputType.number,
+                keyboardType: TextInputType.datetime,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Please enter height';
@@ -106,7 +107,7 @@ class _addPlayerScreenState extends State<addPlayer> {
               TextFormField(
                 controller: _contractEndController,
                 decoration: InputDecoration(labelText: 'Contract End'),
-                keyboardType: TextInputType.number,
+                keyboardType: TextInputType.datetime,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Please enter height';
@@ -117,7 +118,7 @@ class _addPlayerScreenState extends State<addPlayer> {
               TextFormField(
                 controller: _dopingControlController,
                 decoration: InputDecoration(labelText: 'Doping Control'),
-                keyboardType: TextInputType.number,
+                keyboardType: TextInputType.datetime,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Please enter height';
@@ -125,15 +126,28 @@ class _addPlayerScreenState extends State<addPlayer> {
                   return null;
                 },
               ),
+              SizedBox(height: 70,),
               ElevatedButton(
                 child: Text('Add Player'),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text('Your message here'),
-                      ),
-                    );
+                    setState(() {
+                      players.add(Players(
+                        playerName: _playerNameController.text,
+                        age: int.parse(_ageController.text),
+                        weight: double.parse(_weightController.text),
+                        height: double.parse(_heightController.text),
+                        contractBegin: DateTime.fromMillisecondsSinceEpoch(int.parse(_contractBeginController.text)),
+                        contractEnd: DateTime.fromMillisecondsSinceEpoch(int.parse(_contractEndController.text)),
+                        dopingControl: DateTime.fromMillisecondsSinceEpoch(int.parse(_dopingControlController.text)),
+                        playerImage: 'images/player.png',
+                        competition: 'Liga Portugal Bwin',
+                        passport: int.parse(_passportController.text),
+                        clubName: widget.clubName,
+                        imageName: '',
+                        ));
+                    });
+                      Navigator.pop(context, players);
                   }
                 },
               ),

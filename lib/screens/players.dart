@@ -34,12 +34,12 @@ class _PlayerScreen extends State<PlayerScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => addPlayer()),
-          );
-        },
-        child: Icon(Typicons.plus_outline),
+Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => addPlayer(widget.clubName)),
+);
+},
+        child: Icon(Typicons.plus),
       ),
       body: Container(
         width: double.infinity,
