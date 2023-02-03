@@ -6,7 +6,7 @@ import '../classes/players.dart';
 
 class addPlayer extends StatefulWidget {
   final String clubName;
- 
+
   const addPlayer(this.clubName, {super.key});
   @override
   State<addPlayer> createState() => _addPlayer();
@@ -126,7 +126,9 @@ class _addPlayer extends State<addPlayer> {
                   return null;
                 },
               ),
-              SizedBox(height: 70,),
+              SizedBox(
+                height: 70,
+              ),
               ElevatedButton(
                 child: Text('Add Player'),
                 onPressed: () {
@@ -137,18 +139,21 @@ class _addPlayer extends State<addPlayer> {
                         age: int.parse(_ageController.text),
                         weight: double.parse(_weightController.text),
                         height: double.parse(_heightController.text),
-                        contractBegin: DateTime.fromMillisecondsSinceEpoch(int.parse(_contractBeginController.text)),
-                        contractEnd: DateTime.fromMillisecondsSinceEpoch(int.parse(_contractEndController.text)),
-                        dopingControl: DateTime.fromMillisecondsSinceEpoch(int.parse(_dopingControlController.text)),
+                        contractBegin: DateTime.fromMillisecondsSinceEpoch(
+                            int.parse(_contractBeginController.text)),
+                        contractEnd: DateTime.fromMillisecondsSinceEpoch(
+                            int.parse(_contractEndController.text)),
+                        dopingControl: DateTime.fromMillisecondsSinceEpoch(
+                            int.parse(_dopingControlController.text)),
                         playerImage: 'images/player.png',
                         competition: 'Liga Portugal Bwin',
                         passport: int.parse(_passportController.text),
                         clubName: widget.clubName,
                         imageName: '',
-                        ));
+                      ));
                     });
-                      
-                      Navigator.pop(context, players);
+
+                    Navigator.pop(context, players);
                   }
                 },
               ),
