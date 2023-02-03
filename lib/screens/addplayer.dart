@@ -147,6 +147,7 @@ class _addPlayer extends State<addPlayer> {
                         imageName: '',
                         ));
                     });
+                      
                       Navigator.pop(context, players);
                   }
                 },

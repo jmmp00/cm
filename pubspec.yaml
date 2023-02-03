@@ -57,6 +57,8 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
+    - images/in.png
+    - images/out.png
     - images/player.png
     - images/ligabwin.png
     - images/ligasabseg.png
