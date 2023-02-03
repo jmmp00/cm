@@ -163,6 +163,11 @@ List clubs = [
     imageName: "images/teams/vilafranquense.png",
   ),
   Clubs(
+    clubName: 'B SAD',
+    competition: 'Liga Portugal SabSeg',
+    imageName: "images/teams/bsad.png",
+  ),
+  Clubs(
     clubName: 'Benfica B',
     competition: 'Liga Portugal SabSeg',
     imageName: "images/teams/benfica.png",

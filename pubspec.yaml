@@ -61,6 +61,7 @@ flutter:
     - images/ligasabseg.png
     - images/lp.png
     - images/teams/benfica.png
+    - images/teams/bsad.png
     - images/teams/feirense.png
     - images/teams/sjver.png
     - images/teams/porto.png
@@ -149,6 +150,61 @@ flutter:
     - images/players/LigaBwin/vizela/Francis-Cann.png
     - images/players/LigaBwin/vizela/matheus-pereira.png
     - images/players/LigaBwin/vizela/Raphael-Guzzo.png
+    - images/players/LigaSabseg/academicoviseu/capela.png
+    - images/players/LigaSabseg/academicoviseu/clovis.png
+    - images/players/LigaSabseg/academicoviseu/curras.png
+    - images/players/LigaSabseg/amadora/diogosalomao.png
+    - images/players/LigaSabseg/amadora/hugocosta.png
+    - images/players/LigaSabseg/amadora/joaosilva.png
+    - images/players/LigaSabseg/benficab/diegomoreira.png
+    - images/players/LigaSabseg/benficab/hugofelix.png
+    - images/players/LigaSabseg/benficab/martimneto.png
+    - images/players/LigaSabseg/bsad/franciscoteixeira.png
+    - images/players/LigaSabseg/bsad/martim-coxixo.png
+    - images/players/LigaSabseg/bsad/tomas-castro.png
+    - images/players/LigaSabseg/covilha/cornelio.png
+    - images/players/LigaSabseg/covilha/diogorodrigues.png
+    - images/players/LigaSabseg/covilha/zetiago.png
+    - images/players/LigaSabseg/farense/diogoviana.png
+    - images/players/LigaSabseg/farense/seruca.png
+    - images/players/LigaSabseg/farense/vitorgoncalves.png
+    - images/players/LigaSabseg/feirense/diogobras.png
+    - images/players/LigaSabseg/feirense/fabioespinho.png
+    - images/players/LigaSabseg/feirense/joaopinto.png
+    - images/players/LigaSabseg/leixoes/joaoamorim.png
+    - images/players/LigaSabseg/leixoes/rubencandal.png
+    - images/players/LigaSabseg/leixoes/tomascouto.png
+    - images/players/LigaSabseg/mafra/johnkolawole.png
+    - images/players/LigaSabseg/mafra/lee.png
+    - images/players/LigaSabseg/mafra/pite.png
+    - images/players/LigaSabseg/moreirense/aparicio.png
+    - images/players/LigaSabseg/moreirense/camacho.png
+    - images/players/LigaSabseg/moreirense/davidbruno.png
+    - images/players/LigaSabseg/nacional/martimgustavo.png
+    - images/players/LigaSabseg/nacional/pipegomez.png
+    - images/players/LigaSabseg/nacional/zemanuel.png
+    - images/players/LigaSabseg/oliveirense/rodrigoborges.png
+    - images/players/LigaSabseg/oliveirense/serginho.png
+    - images/players/LigaSabseg/oliveirense/vascogadelho.png
+    - images/players/LigaSabseg/penafiel/adriano-castanheira.png
+    - images/players/LigaSabseg/penafiel/afonsofigueiredo.png
+    - images/players/LigaSabseg/penafiel/edi-semedo.png
+    - images/players/LigaSabseg/portob/anhacande.png
+    - images/players/LigaSabseg/portob/dinisrodrigues.png
+    - images/players/LigaSabseg/portob/sindeitavares.png
+    - images/players/LigaSabseg/tondela/rubenfonseca.png
+    - images/players/LigaSabseg/tondela/telmoarcanjo.png
+    - images/players/LigaSabseg/tondela/tiagoalmeida.png
+    - images/players/LigaSabseg/torreense/joao-cardoso.png
+    - images/players/LigaSabseg/torreense/joaoafonso.png
+    - images/players/LigaSabseg/torreense/picas.png
+    - images/players/LigaSabseg/trofense/brunomoreira.png
+    - images/players/LigaSabseg/trofense/martimmaia.png
+    - images/players/LigaSabseg/trofense/simaomartins.png
+    - images/players/LigaSabseg/vilafranquense/bernardomartins.png
+    - images/players/LigaSabseg/vilafranquense/edsonfarias.png
+    - images/players/LigaSabseg/vilafranquense/silvio.png
+    
 
 
   # To add assets to your application, add an assets section, like this:
