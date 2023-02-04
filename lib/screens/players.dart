@@ -12,14 +12,11 @@ class PlayerScreen extends StatefulWidget {
 }
 
 class _PlayerScreen extends State<PlayerScreen> {
-  List clubPlayers = [];
-  List competitionPlayers = [];
+
   int currentPage = 4;
   @override
   Widget build(BuildContext context) {
-    players
-        .where((e) => e.clubName == widget.clubName)
-        .forEach((i) => clubPlayers.add(i));
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -33,18 +30,21 @@ class _PlayerScreen extends State<PlayerScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
+    onPressed: () async {
+        final result = await Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => addPlayer(widget.clubName)),
-          );
-        },
-        child: Icon(Typicons.plus),
-      ),
+        );
+        if (result != null) {
+            setState(() {});
+        }
+    },
+    child: Icon(Typicons.plus),
+),
       body: Container(
         width: double.infinity,
         child: ListView(
-          children: clubPlayers.map((e) {
+          children: players.where((e) => e.clubName == widget.clubName).map((e) {
             final String playerName = e.playerName;
             //para saber a diferença entre a data de incio e termino de contrato
             final DateTime dateOne = e.contractEnd;
@@ -119,14 +119,16 @@ class _PlayerScreen extends State<PlayerScreen> {
                     ],
                   ),
                 ),
-                IconButton(
-                  icon: Icon(Icons.delete),
+                Container(
+                  child: Expanded(child: IconButton(
+                  icon: Icon(Typicons.trash),
                   onPressed: () {
                     setState(() {
-                      clubPlayers.removeWhere(
+                      players.removeWhere(
                           (player) => player.playerName == playerName);
                     });
                   },
+                )),
                 )
               ],
             ));

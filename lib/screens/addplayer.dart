@@ -19,9 +19,9 @@ class _addPlayer extends State<addPlayer> {
   final _weightController = TextEditingController();
   final _passportController = TextEditingController();
   final _heightController = TextEditingController();
-  final _contractBeginController = TextEditingController();
-  final _contractEndController = TextEditingController();
-  final _dopingControlController = TextEditingController();
+
+  final DateTime now = DateTime.now();
+  final List<String> playerslist = []; 
 
   @override
   Widget build(BuildContext context) {
@@ -82,52 +82,21 @@ class _addPlayer extends State<addPlayer> {
                   return null;
                 },
               ),
+              
               TextFormField(
                 controller: _passportController,
                 decoration: InputDecoration(labelText: 'Passport'),
-                keyboardType: TextInputType.number,
                 validator: (value) {
                   if (value!.isEmpty) {
                     return 'Please enter passport';
+                  }elseif( ) {
+                    return null;
                   }
-                  return null;
-                },
-              ),
-              TextFormField(
-                controller: _contractBeginController,
-                decoration: InputDecoration(labelText: 'Contract Begin'),
-                keyboardType: TextInputType.datetime,
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Please enter height';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                controller: _contractEndController,
-                decoration: InputDecoration(labelText: 'Contract End'),
-                keyboardType: TextInputType.datetime,
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Please enter height';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
-                controller: _dopingControlController,
-                decoration: InputDecoration(labelText: 'Doping Control'),
-                keyboardType: TextInputType.datetime,
-                validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Please enter height';
-                  }
-                  return null;
+                  
                 },
               ),
               SizedBox(
-                height: 70,
+                height: 60,
               ),
               ElevatedButton(
                 child: Text('Add Player'),
@@ -139,21 +108,18 @@ class _addPlayer extends State<addPlayer> {
                         age: int.parse(_ageController.text),
                         weight: double.parse(_weightController.text),
                         height: double.parse(_heightController.text),
-                        contractBegin: DateTime.fromMillisecondsSinceEpoch(
-                            int.parse(_contractBeginController.text)),
-                        contractEnd: DateTime.fromMillisecondsSinceEpoch(
-                            int.parse(_contractEndController.text)),
-                        dopingControl: DateTime.fromMillisecondsSinceEpoch(
-                            int.parse(_dopingControlController.text)),
+                        contractBegin: DateTime.now(),
+                        contractEnd: now.add(Duration(days : 365)),
+                        dopingControl: DateTime.now(),
                         playerImage: 'images/player.png',
                         competition: 'Liga Portugal Bwin',
-                        passport: int.parse(_passportController.text),
+                        passport: _passportController.text,
                         clubName: widget.clubName,
                         imageName: '',
                       ));
                     });
 
-                    Navigator.pop(context, players);
+                    Navigator.pop(context, true);
                   }
                 },
               ),

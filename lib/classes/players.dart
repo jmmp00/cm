@@ -12,7 +12,7 @@ class Players extends Clubs {
   final String? competition;
   final DateTime dopingControl;
   final DateTime contractEnd;
-  final int passport;
+  final String passport;
   final DateTime contractBegin;
 
   Players({
